@@ -1,6 +1,3 @@
-#iris flower predictor
-#Keep it simple and straightforward
-#works perfectly
 
 #import statements
 import streamlit as st
@@ -11,13 +8,9 @@ from PIL import Image,ImageFilter,ImageEnhance
 import os
 
 
-
-
-#Usual opening
 st.markdown('''
 # Iris Flower Species Predictor 
 This app detects the type of Iris flower based on Machine Learning!
-- App built by Pranav Sawant and Anshuman Shukla of Team Skillocity.
 - Dataset credits: R.A. Fisher "The Use of Multiple Measurements in Taxonomic Problems" 
 - This dataset is also available on the UC Irvine Machine Learning Repository
 - Dataset License: Open Data Commons Public Domain Dedication and License (PDDL)
@@ -64,8 +57,8 @@ st.write(iris.target_names[prediction])
 
 #st.write(prediction)
 
-st.subheader('Prediction Probability')
-st.write(prediction_proba)
+#st.subheader('Prediction Probability')
+#st.write(prediction_proba)
 
 # Iris Image Manipulation
 @st.cache_resource
@@ -85,8 +78,4 @@ elif iris.target_names[prediction] == 'virginica':
     st.text("Showing Virginica Species")
     st.image(load_image('virginca.jpg'))
 
-#article
 
-st.sidebar.subheader("An article about this app: https://proskillocity.blogspot.com/2021/05/iris-classification-and-prediction.html")
-image = Image.open('killocity (3).png')
-st.image(image, use_column_width=True)
