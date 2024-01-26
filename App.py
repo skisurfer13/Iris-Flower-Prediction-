@@ -1,3 +1,6 @@
+#iris flower predictor
+#Keep it simple and straightforward
+#works perfectly
 
 #import statements
 import streamlit as st
@@ -65,7 +68,7 @@ st.subheader('Prediction Probability')
 st.write(prediction_proba)
 
 # Iris Image Manipulation
-@st.cache
+@st.cache_resource
 def load_image(img):
     im =Image.open(os.path.join(img))
     return im
@@ -82,3 +85,8 @@ elif iris.target_names[prediction] == 'virginica':
     st.text("Showing Virginica Species")
     st.image(load_image('virginca.jpg'))
 
+#article
+
+st.sidebar.subheader("An article about this app: https://proskillocity.blogspot.com/2021/05/iris-classification-and-prediction.html")
+image = Image.open('killocity (3).png')
+st.image(image, use_column_width=True)
